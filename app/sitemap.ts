@@ -1,0 +1,3 @@
+import type { MetadataRoute } from 'next'
+import { getPublishedProjects } from '@/lib/public-data'
+export default async function sitemap():Promise<MetadataRoute.Sitemap>{const base=process.env.NEXT_PUBLIC_SITE_URL||'http://localhost:3000';const projects=await getPublishedProjects({includeMedia:false});return [{url:base,lastModified:new Date()},{url:`${base}/work`,lastModified:new Date()},{url:`${base}/about`,lastModified:new Date()},{url:`${base}/contact`,lastModified:new Date()},...projects.map(p=>({url:`${base}/work/${p.slug}`,lastModified:p.published_at?new Date(p.published_at):new Date()}))]}

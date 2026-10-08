@@ -1,0 +1,1 @@
+export default function Loading(){return <main className="page-shell min-h-screen pt-36"><div className="h-2 w-24 animate-pulse bg-white/10"/><div className="mt-8 h-24 max-w-3xl animate-pulse bg-white/5"/></main>}

@@ -1,0 +1,2 @@
+'use client'
+export default function GlobalError(){return <main className="page-shell flex min-h-screen items-center py-32"><div><p className="eyebrow">ERROR</p><h1 className="serif mt-4 text-6xl">Something went wrong.</h1><p className="mt-5 max-w-lg text-sm leading-6 text-white/45">The page could not complete the requested operation. Refresh and try again.</p><button onClick={()=>location.reload()} className="mt-8 border border-white/15 px-4 py-3 text-[10px] uppercase tracking-[.12em]">Retry</button></div></main>}

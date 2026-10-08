@@ -1,0 +1,6 @@
+import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
+import { getPublishedProjects } from '@/lib/public-data'
+import { ProjectRenderer } from '@/components/site/project-renderer'
+export const metadata={title:'Work'}
+export default async function WorkPage(){const projects=await getPublishedProjects();return <main className="pt-28 md:pt-36"><div className="page-shell pb-16"><p className="eyebrow">WORK / 04</p><h1 className="serif mt-5 max-w-4xl text-6xl leading-[.9] tracking-[-.045em] md:text-8xl">Selected digital products.</h1><div className="mt-8 flex items-center justify-between border-t border-white/10 pt-5"><p className="max-w-xl text-sm leading-6 text-white/50">Every project shown here is backed by repository evidence and explicitly published through the private review workflow.</p><Link href="/contact" className="micro hidden items-center gap-2 md:flex">WORK WITH ME <ArrowUpRight size={15}/></Link></div></div>{projects.length?projects.map((p,i)=><ProjectRenderer key={p.id} project={p as never} index={i+1}/>):<div className="page-shell rule py-24 text-white/45"><p className="micro">WORK IS PRIVATE UNTIL PUBLISHED</p><p className="mt-4 max-w-lg text-sm leading-6">Connect GitHub in the Control Center, analyze repositories, review the evidence, and publish only the work that earns its place.</p></div>}</main>}
